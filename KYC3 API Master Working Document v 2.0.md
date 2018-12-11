@@ -2,7 +2,7 @@
 
 A brief guide to the API functions, their specifications and how to incorporate them into prospecting, risk management and compliance processes.
 
-COMMERCIAL CONFIDENTIAL
+(c) 2018 KYC3 sarl
 
 Version 2.02
 
