@@ -1851,53 +1851,32 @@ We do not store any of your data and we only log a minimum of information requir
 </table>
 
 
-# Reference: Sanction and PEP List Display Name Map
+# Reference: Common Sanction and PEP List Display Name Map
 
 The following JSON structure maps the source collection keys to their display names in KYC3:
-
+~~~~
 [{"source":"usa_ofac_sdn", "displayName":"OFAC Specially Designated Nationals List"},  
-
 {"source":"un_1988", "displayName":"United Nations 1988 Sanction List"},   
-
 {"source":"un_1267", "displayName":"United Nations 1267 Sanction List"},  
-
 {"source":"gbr_hmtreasury_sanctions", "displayName":"Her Majesty's Treasury Sanction List"},
-
 {"source":"eu_sanctions", "displayName":"EU Global Sanction List"},  
-
 {"source":"che_seco", "displayName":"SECO Sanction List"},
-
 {"source":"cia_leaders", "displayName":"CIA Political Party Leadership"},
-
 {"source":"cia_chiefs_of_state", "displayName":"CIA Chiefs of State and Cabinet Members"},
-
 {"source":"intinterpol", "displayName":"Interpol Wanted List"},   
-
 {"source":"ukgovfsa","displayName":"FCA Unauthorised Firms List"},
-
 {"source":"govfbi", "displayName":"FBI Wanted List"},  
-
 {"source":"orgafdb", "displayName":"African Development Bank Santions"},
-
 {"source":"orgadblnadbg4", "displayName":"Asian Development Bank Sanctions"},  
-
 {"source":"orgworldbankweb", "displayName":"World Bank List of Ineligible Individuals"},
-
 {"source":"comebrd", "displayName":"EBRD Ineligible Entities"},
-
 {"source":"orgiadb", "displayName":"Inter-American Development Bank Sanctions"},  
-
 {"source":"govdea", "displayName":"Drug Enforcement Administration Wanted List"},  
-
 {"source":"govuspispostalinspectors", "displayName":"US Postal Inspection Service"},
-
 {"source":"govoccapps", "displayName":"OCC/OTS Enforcement Orders"},
-
 {"source":"govdocbisecl", "displayName":"US Government Consolidated Screening"},
-
 {"source":"wikidata", "displayName":"KYC3 Politically Exposed Persons List"},  
-
 {"source":"usa_ofac_con", "displayName":"US Treasury Consolidated Sanctions"},  
-
 {"source":"cncomchinadignitaries", "displayName":"KYC3 China PEP List"}]
+~~~~
 
