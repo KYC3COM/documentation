@@ -1,4 +1,4 @@
-Using the KYC3 API v2
+# Using the KYC3 API v2
 
 A brief guide to the API functions, their specifications and how to incorporate them into prospecting, risk management and compliance processes.
 
@@ -6,7 +6,7 @@ COMMERCIAL CONFIDENTIAL
 
 Version 2.02
 
-Using the KYC3 API
+# Using the KYC3 API
 
 # Introduction
 
@@ -40,19 +40,22 @@ With the KYC3 API one can:
 
 We support two ways of user authentication:
 
-1. Before sending requests to the API the user has to login with his regular KYC3.com credentials.Then, he can use the retrieved authentication token in each request header "X-Auth-Token: <token>"
+1. Before sending requests to the API the user has to login with his regular KYC3.com credentials.
+Then, he can use the retrieved authentication token in each request header 
+"X-Auth-Token: <token>"
 
-2. The user can send the API key as header with each request"X-Api-Key: <api_key>"
+2. The user can send the API key as header with each request
+"X-Api-Key: <api_key>"
 
 # API Function Overview
 
-**/auth (POST): **This function is used to start an authenticated session and retrieves an auth-token.
+**/auth (POST):** This function is used to start an authenticated session and retrieves an auth-token.
 
-**/logout (GET)**: This function is used to cancel an issued auth-token.
+**/logout (GET):** This function is used to cancel an issued auth-token.
 
-**/nameCheck (GET): **This function provides a quick and simple way to screen the name of an individual or company against all KYC3 sanctions and PEP (NOTE:  Politically Exposed Persons) lists.  The call accepts the search string, a full or partial set of name tokens, and returns a JSON structure containing the various sanction lists with hit counts.
+**/nameCheck (GET):** This function provides a quick and simple way to screen the name of an individual or company against all KYC3 sanctions and PEP (NOTE:  Politically Exposed Persons) lists.  The call accepts the search string, a full or partial set of name tokens, and returns a JSON structure containing the various sanction lists with hit counts.
 
-**/entityDetails/sanction & /entityDetails/pep (GET): **These functions provide detailed sanction and PEP list information from the KYC3 intelligence database.  The call accepts the name search string and, when there is a name match on the list, this function will return the detailed entries that match.  All details provided by the relevant list are included, such as birthdate, nationality, residence location, known aliases and the nature of the sanction in question.
+**/entityDetails/sanction & /entityDetails/pep (GET):** These functions provide detailed sanction and PEP list information from the KYC3 intelligence database.  The call accepts the name search string and, when there is a name match on the list, this function will return the detailed entries that match.  All details provided by the relevant list are included, such as birthdate, nationality, residence location, known aliases and the nature of the sanction in question.
 
 **/country/riskLookup (GET):** This function is used to retrieve country risk metrics for any given country code (ISO 3166 2 letter).  A general risk, plus specific corruption and AML risk metrics are provided.
 
@@ -60,15 +63,15 @@ We support two ways of user authentication:
 
 **/entities/related (GET):** This function is used to find the entities that are related to a specific entity.  The function returns a set of related entities (people, organizations and locations) known to KYC3.  This can be used to cross check relationships between people, organizations and locations.
 
-**/media/byEntityId (GET): **This function is used to get the media, by topic, for any entity *by ID*.  The result set includes the main topics in which the entity is mentioned, the exposure in each topic and the top 25 media articles about the entity for each topic.
+**/media/byEntityId (GET):** This function is used to get the media, by topic, for any entity *by ID*.  The result set includes the main topics in which the entity is mentioned, the exposure in each topic and the top 25 media articles about the entity for each topic.
 
-**/media/byEntityName (GET): **This function is used to get the media, by topic, for any entity *by Name, which may include multiple EntityIDs*, e.g. several "Steve Jobs" will each have their own EntityID.  The result set includes the main topics in which the entity is mentioned, the exposure in each topic and the top 25 media articles about the entity for each topic.
+**/media/byEntityName (GET):** This function is used to get the media, by topic, for any entity *by Name, which may include multiple EntityIDs*, e.g. several "Steve Jobs" will each have their own EntityID.  The result set includes the main topics in which the entity is mentioned, the exposure in each topic and the top 25 media articles about the entity for each topic.
 
-**/news/byEntityId (GET): **This function is used to retrieve the most recent media articles mentioning an entity, irrespective of the topic.  The result set includes a list of recent media articles containing references to the entity and, using the offset parameter, can be paginated to provide a "news browsing" UX.
+**/news/byEntityId (GET):** This function is used to retrieve the most recent media articles mentioning an entity, irrespective of the topic.  The result set includes a list of recent media articles containing references to the entity and, using the offset parameter, can be paginated to provide a "news browsing" UX.
 
 **/media/byTopic (GET):** This function is used to retrieve the most recent media articles on a specific topic, irrespective of the entities mentioned therein.  The result set includes a list of recent media articles scoring highly on the specified topic and, using the offset parameter, can be paginated to provide a "news browsing" UX.
 
-**/idCheck (POST): **This function validates:
+**/idCheck (POST):** This function validates:
 
 1. The provided live selfie is genuine, meaning not manipulated, shows a human face and analyzes that the picture is taken from a true face and not from a still picture.
 
@@ -82,7 +85,7 @@ Moreover, the function:
 
 2. compares the passport picture with the provided live selfie and determines if the faces mach.
 
-**/identityValidator: **This function provides:
+**/identityValidator:** This function provides:
 
 1. The provided live selfie is genuine, meaning not manipulated, shows a human face and analyzes that the picture is taken from a true face and not from a still picture.
 
@@ -94,7 +97,7 @@ Moreover, the function:
 
 4. compares the passport picture with the provided live selfie and determines if the faces mach.
 
-**/riskEval/eval (GET): **This function provides a risk value based on detailed sanction list information from the KYC3 intelligence database.  The call accepts the name search string. If the risk value is above a given threshold this function will return the detailed entries that match.  All details provided by the relevant list are included, such as birthdate, nationality, residence location, known aliases and the nature of the sanction in question. Moreover, the function provides a country risk metrics for any given country code (ISO 3166 2 letter).  A general risk, plus specific corruption and AML risk metrics are provided.
+**/riskEval/eval (GET):** This function provides a risk value based on detailed sanction list information from the KYC3 intelligence database.  The call accepts the name search string. If the risk value is above a given threshold this function will return the detailed entries that match.  All details provided by the relevant list are included, such as birthdate, nationality, residence location, known aliases and the nature of the sanction in question. Moreover, the function provides a country risk metrics for any given country code (ISO 3166 2 letter).  A general risk, plus specific corruption and AML risk metrics are provided.
 
 **/mrzExtractor (POST)**: This function reads the Machine Readable Zone from international Passports or ID-Cards and returns these values. The function accepts a jpeg or png picture of the front page and optional of the back page of an identification document. For Passports, the MRZ is expected to be on the front page and for ID-Cards on the back page.
 
@@ -199,17 +202,16 @@ For the media calls "offset_value" is the position from first search result in t
 Authenticates the user with his KYC3.com credentials and returns an auth_token.
 
 ### Input (JSON)
-
+~~~~
 { "username:<username>", “password:<password>” }
+~~~~
 
 ### Output
-
+~~~~
 {	
-
 	X-Auth-Token: <auth_token>
-
 }
-
+~~~~
 ## /logout (GET)
 
 Disables the auth_token in the header.
@@ -223,25 +225,17 @@ Given a search term, this function will return a hit count array of sanction and
 search_query
 
 ### Output
-
+~~~~
 {
-
 	"listings": [{
-
 		"listName": "*listnamecode*",
-
 		"listType": "*listtypestring*",		//sanction or pep
-
 		"hits": *hitsnumber*,
-
 		"uiSearchUrl": "*Api.kyc3.comResultURL*"
-
 	}, { …}],
-
 	"timestamp": *UnixTimeStampOfResponse*
-
 }
-
+~~~~
 ## /entityDetails/pep (GET)
 
 ## /entityDetails/sanction (GET)
@@ -253,27 +247,19 @@ Given a search term, these functions will return the relevant sanction details f
 search_query
 
 ### Output
-
-{Hits: hitcount
-
+~~~~
+{
+Hits: hitcount
 SanctionedEntities:[{
-
-"id": *NodeNumberString*,
-
-"entityType": *EntityTypeString*,
-
-"properties": {
-
-*PropertyNameString*: *PropertyValueString*,
-
-},
-
-"objectType": *ObjectTypeString*
-
-},
-
+	"id": NodeNumberString,
+	"entityType": EntityTypeString,
+	"properties": {
+		PropertyNameString: PropertyValueString,
+		},
+	"objectType": ObjectTypeString
+	},
 {…}] }
-
+~~~~
 ### Property Tuples
 
 **EntityID**
@@ -304,6 +290,7 @@ SanctionedEntities:[{
 
 **Address**
 
+
 ## /country/riskLookup (GET)
 
 Given a 2 letter ISO country code as input the function will return the name and relevant risk metrics for the country.
@@ -313,21 +300,15 @@ Given a 2 letter ISO country code as input the function will return the name and
 iso_country_code 	// 2 letter ISO-3166-1 code
 
 ### Output
-
+~~~~
 {
-
-    "isoCode": "*ISOCountryCode*",
-
-    "isoName": "*ISOCountryName*",
-
-    "totalRisk": *KYCRiskValue*,
-
-    "mlRisk": *AMLRiskValue*,
-
-    "corruptionRisk": *CorruptionRiskValue*
-
+    "isoCode": "ISOCountryCode",
+    "isoName": "ISOCountryName",
+    "totalRisk": KYCRiskValue,
+    "mlRisk": AMLRiskValue,
+    "corruptionRisk": CorruptionRiskValue
   }
-
+~~~~
 ### Notes
 
 Risk is a evaluated on a scale of 1 to 10 with 1 being the low risk and 10 being high risk.
@@ -345,43 +326,31 @@ Given a search term this function will return the relevant Entities from the KYC
 search_query
 
 ### Output
-
+~~~~
 [{
-
-"id": *NodeNumberString*,
-
-"entityType": *EntityTypeString,*
-
-"properties": {
-
-*PropertyNameString: PropertyValueString,*
-
-*…*
-
+	"id": NodeNumberString,
+	"entityType": EntityTypeString,
+	"properties": {
+		PropertyNameString: PropertyValueString,
+		…
+		},
+	"objectType": ObjectTypeString
 },
-
-"objectType": *ObjectTypeString*
-
-},
-
 {…}]
+~~~~
 
 #### Mandatory Property Tuples
-
+~~~~
 "entityId": EntityIDString
-
-"entityType": *EntityTypeString*
-
-"entityName": *EntityNameString*
-
-"mentionCount": *CountValue*
-
+"entityType": EntityTypeString
+"entityName": EntityNameString
+"mentionCount": CountValue
+~~~~
 #### Facultative Property Tuples – new properties may be added
-
-"sanctioned": *true/false*
-
-"gender": *M, F or U (male, female or unknown)*
-
+~~~~
+"sanctioned": true/false
+"gender": M, F or U (male, female or unknown)
+~~~~
 ### Notes
 
 EntityIDString is the relevant ID for further queries.
@@ -400,54 +369,37 @@ EntityID
 
 ### Output
 
+~~~~
 {
-
-"entityID": *SoruceEntityIDString*,
-
-"sourceNode": *SourceNodeNumberString*,
-
-"hits": *NumberOfEntitiesInFollowingSet*,
-
+"entityID": SoruceEntityIDString,
+"sourceNode": SourceNodeNumberString,
+"hits": NumberOfEntitiesInFollowingSet,
 "relations":
-
-[{
-
-"id": *NodeNumberString*,
-
-"entityType": *EntityTypeString*,
-
-"properties": {
-
-*PropertyNameString*: *PropertyValueString*,
-
-*…*
-
-},
-
-"objectType": *ObjectTypeString*
-
-},
-
-{…}]
-
+	[{
+	"id": NodeNumberString,
+	"entityType": EntityTypeString,
+	"properties": {
+	PropertyNameString: PropertyValueString,
+	…
+	},
+	"objectType": *ObjectTypeString*
+	},
+	{…}]
 }
+~~~~
 
 ### Mandatory Property Tuples
-
+~~~~
 "entityId": EntityIDString
-
 "entityType": EntityTypeString
-
 "entityName": EntityNameString
-
 "mentionCount": CountValue
-
+~~~~
 ### Facultative Property Tuples – new properties may be added
-
+~~~~
 "sanctioned": true/false
-
 "gender": M, F or U (male, female or unknown)
-
+~~~~
 Note: Mention-Count will return -1 in the event that the count cannot be calculated.
 
 ## /media/byEntityId (GET)
@@ -463,30 +415,20 @@ This will be used to develop user experiences that show entities in context, spe
 EntityID
 
 ### Output
-
-	{
-
+~~~~
+{
 	"topics": [{
-
-		"topicLabel": *topiclabelstring*,
-
-		"count": *mentioncount*,
-
+		"topicLabel": topiclabelstring,
+		"count": mentioncount,
 		"media": [{
-
-			"headline": *headlinestring*,
-
-			"publicationDate": *UnixTime, 	*
-
-			"url": *articleurl*
-
+			"headline": headlinestring,
+			"publicationDate": UnixTime, 	
+			"url": articleurl
 		}, { …}],
-
 	}, { … }]
-
 }
-
-## /news/byEntityId(GET)
+~~~~
+## /news/byEntityId (GET)
 
 Given an EntityID this function will return the relevant media set of articles containing that entity.  The result set will include the sub-set of 50 headlines, publication date, topics and news article URLs, ordered from newest to oldest starting at the offset value.  The offset value permits for pagination.  
 
@@ -499,35 +441,22 @@ OffsetValue
 ### Output
 
 Results from the full set of results (ordered by publication date from newest to oldest) starting at the OffsetValue will be returned in the structure as follows:
-
-	{
-
-	"hits": *hitcount*
-
-*	*"media": [{
-
-			"headline": *headlinestring*,
-
-			"publicationDate": *UnixTime, 	*
-
-			"PrimaryTopic": *PrimaryTopicIDString,*
-
-*			*"PrimaryTopicStrength": *PrimaryTopicIDValue,*
-
-*			*"SecondaryTopic": Secondary*TopicIDString,*
-
-*			*"SecondaryTopicStrength": *SecondaryTopicIDValue,*
-
-*			*"TertiaryTopic": *TertiaryTopicIDString,*
-
-*			*"PrimaryTopicStrength": *TertiaryTopicIDValue,*
-
-"url": *articleurl*
-
-		}, { …}],
-
-	}
-
+~~~~
+{
+"hits": hitcount
+	"media": [{
+			"headline": headlinestring,
+			"publicationDate": UnixTime, 	
+			"PrimaryTopic": PrimaryTopicIDString,
+			"PrimaryTopicStrength": PrimaryTopicIDValue,
+			"SecondaryTopic": SecondaryTopicIDString,
+			"SecondaryTopicStrength": SecondaryTopicIDValue,
+			"TertiaryTopic": TertiaryTopicIDString,
+			"PrimaryTopicStrength": TertiaryTopicIDValue,
+	"url": articleurl
+	}, { …}],
+}
+~~~~
 ### Note
 
 The Primary, Secondary and Tertiary topics in the result are the *3 highest topic values* for the article.
@@ -547,23 +476,16 @@ OffsetValue
 ### Output
 
 Results from the full set of results (ordered by publication date from newest to oldest) starting at the OffsetValue will be returned in the structure as follows:
-
-	{
-
-	"hits" : *hitcount*
-
-*	*"media": [{
-
-			"headline": *headlinestring*,
-
-			"publicationDate": *UnixTime,*
-
-			"url": *articleurl*
-
-		}, { …}],
-
-	}
-
+~~~~
+{
+	"hits" : hitcount
+	"media": [{
+		"headline": headlinestring,
+		"publicationDate": UnixTime,
+		"url": articleurl
+	}, { …}],
+}
+~~~~
 ## /riskEval/eval (POST)
 
 Given a name and a country, this function will return a risk score as well as detail information on the sanction or PEP entries for the requested name. Furthermore, the function provides a general country risk score for the country of origin for the given person.
@@ -579,69 +501,41 @@ dob 	(Date of Birth as YYYY-mm-dd)
 country (2 letter ISO code)
 
 ### Output
-
+~~~~
 {
-
 	"riskScore": Int {0,1,2},
-
 	"highestSanctionScore" : Int {0,1,2},
-
 	"highestPepScore" : Int {0,1},
-
 	"mediaRiskScore" : Double,
-
 	"hitCount: Int,
-
 	"listings": [{
-
 		"listName": String,
-
 		"listType": String,		//sanction or pep
-
 		"hits": Int,
-
 	}, { …}],
-
 	"details" : [{
-
 		"score" : Int {0,1,2},
-
 		"names" : [String],
-
 		"listName" : String,
-
 		"listType" : String,
-
 		"nationalities" : [String],
-
 		"datesOfBirth" : [Date],
-
 		"datesOfBirthOffset" : [Long]
-
 	}, {…}],
-
 	"countryRisk": {
-
     		"isoCode": String,
-
     		"isoName": String,
-
     		"totalRisk": *Double*,
-
     		"amlRisk": *Double*,
-
     		"corruptionRisk": *Double*
-
   	}
-
 	"timestamp": UnixTimeStampOfResponse
-
 }
-
+~~~~
 An example query is given as:
-
+~~~~
 curl 'https://api.kyc3.com/v2/riskEval/eval?fisrtName=Viktor&lastNameBout&cob=1970-01-13&country=RU’
-
+~~~~
 Date is always in the format: YYYY-mm-dd
 
 Overall, Sanction and Pep score values have to be interpreted as:
@@ -654,7 +548,8 @@ Overall, Sanction and Pep score values have to be interpreted as:
 
 The risk score is computed on the basis of the provided information and the retrieved results from Sanction, PEP and negative Media screening. The following steps are performed:
 
-* Name matching is computed such that all partial hits in the request and in the lists for given names as well a as for last names will be treated as hits if there is at least one hit for given name and for last name.All following tests will only be performed if the names match.
+* Name matching is computed such that all partial hits in the request and in the lists for given names as well a as for last names will be treated as hits if there is at least one hit for given name and for last name.
+All following tests will only be performed if the names match.
 
     * Check for Sanction entries
 
@@ -749,89 +644,51 @@ passportBack ( path to file for upload )
 search_query (name of the person to investigate)
 
 ### Output
-
+~~~~
 {
-
 	"faceRec" : { “humanFace” : Boolean,
-
 			"liveliness" : Boolean,
-
 			"containsMRZ" : Boolean,
-
 			"FaceMatch" : Boolean
-
 			},
-
 	"MRZ" : {
-
 			"PassportType" : String,
-
 			"IssuingCountry" : String,
-
 			"Surname" : String,
-
 			"GivenName" : String,
-
 			"Sex" : Char(1) {M,F,?},
-
 			"PassportNumber" : String,
-
 			"DateOfBirth" : Date,
-
 			"DateOfExpiration" : Date,
-
 		}
-
 	"pep" : {	Hits: hitcount
-
-SanctionedEntities:[{
-
-"id": *NodeNumberString*,
-
-"entityType": *EntityTypeString*,
-
-"properties": {
-
-*PropertyNameString*: *PropertyValueString*,
-
-},
-
-"objectType": *ObjectTypeString*
-
-},
-
-{…}] }
-
+		SanctionedEntities:[{
+			"id": NodeNumberString,
+			"entityType": EntityTypeString,
+			"properties": {
+				PropertyNameString: PropertyValueString,
+				},
+			"objectType": ObjectTypeString
+			},
+		{…}] }
+		}
+	"sanction" : { 	Hits: hitcount
+		SanctionedEntities:[{
+			"id": NodeNumberString,
+			"entityType": EntityTypeString,
+			"properties": {
+				PropertyNameString: PropertyValueString,
+				},
+			"objectType": ObjectTypeString
+			},
+		{…}] }
+	}	
 }
-
-"sanction" : { 	Hits: hitcount
-
-SanctionedEntities:[{
-
-"id": *NodeNumberString*,
-
-"entityType": *EntityTypeString*,
-
-"properties": {
-
-*PropertyNameString*: *PropertyValueString*,
-
-},
-
-"objectType": *ObjectTypeString*
-
-},
-
-{…}] }
-
-}	
-
-}
-
+~~~~
 An example is given as:
-
+~~~~
 curl -F "file1=@1.jpg" -F "file2=@2.jpg" -F "file3=@1.jpg" -F "file4=@1.jpg" -F "file5=@1.jpg" -F "passportFront=@passport.jpg" -F "search_query=Donald Trump"  https://api.kyc3.com/v2/identityValidator
-
+~~~~
 ## /identityValidator (POST)
 
 Given a sequence of consecutive selfies that contain a movement of eyes or the mouth, together with a picture of a passport or two pictures of both sides of an id card, this function will return whether the live selfie is taken from a true human, the live selfie is genuine, the picture of the passport is genuine, contains a MRZ and a human face. Moreover, the function returns the MRZ information and a face recognition (match) result.
@@ -853,54 +710,40 @@ passportFront ( path to file for upload )
 passportBack ( path to file for upload )
 
 ### Output
-
+~~~~
 {
-
 	"humanFace" : Boolean,
-
 	"selfieGenuity" : Boolean,
-
 	"liveliness" : Boolean,
-
 	"containsMRZ" : Boolean,
-
 	"MRZ" : {
-
 			"PassportType" : String,
-
 			"IssuingCountry" : String,
-
 			"Surname" : String,
-
 			"GivenName" : String,
-
 			"Sex" : Char(1) {M,F,?},
-
 			"PassportNumber" : String,
-
 			"DateOfBirth" : Date,
-
 			"DateOfExpiration" : Date,
-
 		}
-
 	"FaceMatch" : Boolean
-
 }
-
+~~~~
 An example query is given as:
-
+~~~~
 curl -F "file1=@1.jpg" -F "file2=@2.jpg" -F "file3=@1.jpg" -F "file4=@1.jpg" -F "file5=@1.jpg" -F "passportFront=@passport.jpg" https://api.kyc3.com/v2/identityValidator
-
+~~~~
 The function takes 6 to 7 input files depending on the kind of authorization document. For a passport one passport picture is sufficient because the picture and the MRZ are on the front page of the document. For ID cards the client has to provide pictures of both sides because the picture is on the front page whereas the MRZ is on the back page. Pictures have to have minimal depth of 400dpi and should be around 400x600 pixels in size for the selfies and around 1200x800 pixels for the passport pictures.
 
 This function does sequential checking on the provided information as follows:
 
-1. Check if there is one! Human face in each provided live picture file.If one picture contains not exactly one human face the algorithm rejects the image.
+1. Check if there is one! Human face in each provided live picture file.
+If one picture contains not exactly one human face the algorithm rejects the image.
 
 2. Check if the provided pictures are genuine, meaning that they have not been altered or manipulated in the transit between the mobile application and the API.
 
-3. Check provided live pictures for liveliness. This means to check for the change in some aspect ratios in special regions of a human face (eyes, mouth or chin).If there is no motion in the facial region or a linear motion of all significant regions, indicating a still picture, the algorithm breaks.
+3. Check provided live pictures for liveliness. This means to check for the change in some aspect ratios in special regions of a human face (eyes, mouth or chin).
+If there is no motion in the facial region or a linear motion of all significant regions, indicating a still picture, the algorithm breaks.
 
 4. Perform face recognition algorithm on all provided live selfies plus the detected face from the passport picture. If one of the pictures does not match the algorithm breaks.
 
@@ -917,35 +760,22 @@ passportFront ( path to file for upload )
 passportBack ( path to file for upload )
 
 ### Output
-
+~~~~
 {
-
 	"PassportType" : String,
-
 	"IssuingCountry" : String,
-
 	"Surname" : String,
-
 	"GivenName" : String,
-
 	"Sex" : Char(1) {M,F,?},
-
 	"PassportNumber" : String,
-
 	"DateOfBirth" : Date,
-
 	"DateOfExpiration" : Date,
-
 	"MRZCheck" : Boolean,
-
 	"numberCheck" : Boolean,
-
 	"dobCheck" : Boolean,
-
 	"doeCheck" : Boolean
-
 }
-
+~~~~
 ## /faceRecognizer (POST)
 
 Given a sequence of consecutive selfies that contain a movement of eyes or the mouth this function will return whether the live selfie is taken from a true human, the live selfie is genuine and the selfies show the face of the same person.
@@ -967,17 +797,13 @@ passportFront ( path to file for upload )
 passportBack ( path to file for upload )
 
 ### Output
-
+~~~~
 {
-
 	"humanFace" : Boolean,
-
 	"liveliness" : Boolean,
-
 	"FaceMatch" : Boolean
-
 }
-
+~~~~
 ## /videoRecognizer (POST)
 
 Given a video with a the audio of a proposed sequence of words, together with a picture of a passport or a picture of the front page of an id card, this function will return whether the video is taken from a true human, the live video is genuine and contains a human face. Also, this function returns a list of booleans, where the recognized words from video match the provided word list.
@@ -993,23 +819,16 @@ language (ISO country code)
 wordList (Comma Separated String)
 
 ### Output
-
+~~~~
 {
-
 	"faceRec" : {
-
 	"humanFace" : Boolean,
-
 		"liveliness" : Boolean,
-
 		"FaceMatch" : Boolean
-
 	}
-
 	"wordMatch" : Boolean[]
-
 }
-
+~~~~
 ## /getWordList (GET)
 
 Given a number of words between 1 and 10 the function returns a random list from the NATO alphabet.
@@ -1019,13 +838,11 @@ Given a number of words between 1 and 10 the function returns a random list from
 ### numberOfWords
 
 ### Output
-
+~~~~
 {
-
 	[] : String[]
-
 }
-
+~~~~
 # Sources
 
 Today, KYC3 processes a large amount of public data in order to provide the intelligence capability that we deliver.  In addition to over 55,000 news and reputable industry blog sites that are monitored in near real-time, we also process all the major sanctions lists published by FATF member governments, public PEP lists and our own proprietary PEP lists.  
