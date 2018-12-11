@@ -4,4 +4,4 @@ If you would like to know more about KYC3 or to inquire about access to any of t
 All documentation is copyright KYC3 sarl.
 
 ## API Reference Docs
-[KYC3 API Technical Documentation](https://github.com/KYC3COM/documentation/blob/master/KYC3%20API%20Master%20Working%20Document%20v%202.0.md "API Documentation").
+[KYC3 API Technical Documentation](https://github.com/KYC3COM/documentation/blob/master/KYC3_API_v2.02.md "API Documentation").
