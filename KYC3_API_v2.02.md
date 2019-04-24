@@ -505,7 +505,7 @@ country (2 letter ISO code)
 ### Output
 ~~~~
 {
-	"riskScore": Int {0,1,2},
+	"riskScore": Int, 			// generally values over 100 indicate very high risk
 	"highestSanctionScore" : Int {0,1,2},
 	"highestPepScore" : Int {0,1},
 	"mediaRiskScore" : Double,
