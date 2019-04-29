@@ -121,6 +121,24 @@ Moreover, the function:
 
 **/getWordList (GET)**: Provided a number between 1 and 10, the function returns a list of random words from the NATO alphabet. This list can be used in combination with the videoRecognizer to verify liveliness.
 
+## Credit Cost Per Call
+|**Function**|**Credits**|
+|:-----------|------:|
+|/nameCheck|1|
+|/entityDetails/pep|1|
+|/entityDetails/sanction|1|
+|/country/riskLookup|1|
+|/entities/search|1|
+|/entities/related|1|
+|/media/byEntityId|1|
+|/media/byEntityName|1|
+|/news/byEntity|1|
+|/media/byTopic|1|
+|/identityValidator|10|
+|/mrzExtractor|6|
+|/faceRecognizer|6|
+|/videoRecognizer|17|
+
 # Example Usage
 
 All functions are accessible at the root URL: 
