@@ -1,5 +1,8 @@
 # Using the KYC3 API v2
-
+# THIS DOCUMENT IS NO LONGER MAINTAINED
+# FOR THE LATEST API DOCUMENTATION PLEASE SEE
+# https://kyc3api.docs.apiary.io/
+# THANK YOU
 A brief guide to the API functions, their specifications and how to incorporate them into prospecting, risk management and compliance processes.
 
 If you would like to know more about KYC3 or to inquire about access to any of the services documented here, please visit the [KYC3 Website](https://kyc3.com). If you are interested in specialized services for crypto exchanges, initial coin offerings or security token offerings, please visit the [KYC3 ICO Service Site](https://ico.kyc3.com) or the [KYC3 STO Service Site](https://sto.kyc3.com). 
